@@ -58,10 +58,8 @@ const quotes = [
             cl = 'snow';
         }
 
-
         textHolder.innerHTML += '<span class="'+cl+'">' + word + '</span> ';
     }
-
 
     var $th = $('.text-holder');
     $th.css('height', $th.height());
@@ -74,6 +72,4 @@ const quotes = [
     $('body').click(function(){
         $('canvas').toggleClass('black');
     });
-
-
 
