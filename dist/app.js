@@ -94,6 +94,7 @@ var createScene = function createScene() {
 
     var scene = new __WEBPACK_IMPORTED_MODULE_0_babylonjs__["Scene"](engine);
     scene.gravity = new __WEBPACK_IMPORTED_MODULE_0_babylonjs__["Vector3"](0, -9.81, 0);
+    // scene.clearColor = new BABYLON.Color4(0,0,0,0.001); 
     scene.clearColor = new __WEBPACK_IMPORTED_MODULE_0_babylonjs__["Color4"](0, 0, 0, 0.11);
 
     // Инициализация камеры
@@ -27099,16 +27100,18 @@ for (var k = 0; k <= words.length; k++) {
         cl = 'snow';
     }
 
-    textHolder.innerHTML += '<span class="' + cl + '">' + word + ' </span>';
+    textHolder.innerHTML += '<span class="' + cl + '">' + word + '</span> ';
 }
 
 var $th = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.text-holder');
 $th.css('height', $th.height());
 
-console.log($th.height());
-
 $th.children().hide().each(function (i) {
     __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).delay(i * 300).fadeIn(1000);
+});
+
+__WEBPACK_IMPORTED_MODULE_0_jquery___default()('body').click(function () {
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default()('canvas').toggleClass('black');
 });
 
 /***/ }),

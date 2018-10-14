@@ -7,6 +7,19 @@
 canvas {
   width: 100vw;
   height: 100vh;
+  background-color: transparent;
+}
+
+canvas.black {
+  background-color: #000;
+}
+
+canvas.black + .text-holder {
+  color: #fff;
+}
+
+canvas.black + .text-holder .snow {
+  text-decoration: underline;
 }
 
 .text-holder {

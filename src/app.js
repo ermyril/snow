@@ -16,6 +16,7 @@ var engine = new BABYLON.Engine(canvas, true, {preserveDrawingBuffer: true, sten
 
     var scene = new BABYLON.Scene(engine);
     scene.gravity = new BABYLON.Vector3(0, -9.81, 0);
+    // scene.clearColor = new BABYLON.Color4(0,0,0,0.001); 
     scene.clearColor = new BABYLON.Color4(0,0,0,0.11); 
 
 

@@ -9,6 +9,18 @@ body {
 canvas {
     width: 100vw;
     height: 100vh;
+    background-color: transparent;
+
+    &.black{
+        background-color: #000;
+        & + .text-holder{
+            color: #fff;
+
+            .snow{
+                text-decoration: underline;
+            }
+        }
+    }
 }
 
 .text-holder{

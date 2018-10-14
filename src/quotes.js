@@ -59,18 +59,20 @@ const quotes = [
         }
 
 
-        textHolder.innerHTML += '<span class="'+cl+'">' + word + ' </span>';
+        textHolder.innerHTML += '<span class="'+cl+'">' + word + '</span> ';
     }
 
 
     var $th = $('.text-holder');
     $th.css('height', $th.height());
 
-    console.log($th.height());
-
-
     $th.children().hide().each(function(i){
       $(this).delay(i*300).fadeIn(1000);
+    });
+
+
+    $('body').click(function(){
+        $('canvas').toggleClass('black');
     });
 
 
