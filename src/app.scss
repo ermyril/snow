@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+
+body {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    //background-color: #f00;
+    min-width: 320px;
+}
+canvas {
+    width: 100vw;
+    height: 100vh;
+}
+
+.text-holder{
+    position: absolute;
+    width: 100vw;
+    bottom: 5vw;
+    left: 5vw;
+    max-width: 90vw;
+    font-size: 4rem;
+    color: #000;
+    text-align: left;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+
+}
+
+.snow{
+    color: #fff;
+}
+
+.autor{
+    font-style: italic;
+    font-size: 3rem;
+    display: block;
+}
