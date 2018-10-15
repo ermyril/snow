@@ -140,34 +140,84 @@ var engine = new BABYLON.Engine(canvas, true, {preserveDrawingBuffer: true, sten
 
 
 
+
+
+
+
      /**
+
       *  Animating ArcRotateCamera
+
       *  Анимация перемещения орбитальной камеры
+
       */
-    const animCamAlpha = new BABYLON.Animation("animCam", "alpha", 5,
+
+    const animCamAlpha = new BABYLON.Animation("animCam", "alpha", 3,
+
+
 
             BABYLON.Animation.ANIMATIONTYPE_FLOAT,
+
+
 
             BABYLON.Animation.ANIMATIONLOOPMODE_CYCLE);
 
 
 
+
+
+
+
     let keysAlpha = [];
 
+
+
     keysAlpha.push({
-
             frame: 0,
-
             value: 0
-
+    });
+    keysAlpha.push({
+            frame: 10,
+            value: Math.PI/6  // 30
+    });
+    keysAlpha.push({
+            frame: 20,
+            value: Math.PI / 2 // 90
+    });
+    keysAlpha.push({
+            frame: 30,
+            value: 2 * Math.PI/3 // 120
+    });
+    keysAlpha.push({
+            frame: 40,
+            value: Math.PI // 180
+    });
+    keysAlpha.push({
+            frame: 50,
+            value: 5 * Math.PI/4 // 225
+    });
+    keysAlpha.push({
+            frame: 60,
+            value: 3 * Math.PI/2  // 270
     });
 
     keysAlpha.push({
+            frame: 70,
+            value: 11 * Math.PI/6  // 315
+    });
 
+    keysAlpha.push({
+            frame: 80,
+            value: 2 * Math.PI  // 360
+    });
+    keysAlpha.push({
+            frame: 90,
+            value: 11 * Math.PI / 5  // 360
+    });
+
+     keysAlpha.push({
             frame: 100,
-
-            value: 2 * Math.PI
-
+            value: 2 * Math.PI  // 360
     });
 
 
@@ -178,7 +228,41 @@ var engine = new BABYLON.Engine(canvas, true, {preserveDrawingBuffer: true, sten
 
 
 
+    // Creating an easing function
+
+    var easingFunction = new BABYLON.BezierCurveEase();
+
+
+
+    // For each easing function, you can choose between EASEIN (default), EASEOUT, EASEINOUT
+
+    easingFunction.setEasingMode(BABYLON.EasingFunction.EASINGMODE_EASEINOUT);
+
+
+
+    // Adding the easing function to the animation
+
+    // animCamAlpha.setEasingFunction(easingFunction);
+
+    // animCamAlpha.QuadraticEase();
+
+    
+
+
+
+    // Adding animation to my torus animations collection
+
+    // torus.animations.push(animationTorus);
+
+
+
+
+
+
+
     camera.animations.push(animCamAlpha);
+
+
 
     scene.beginAnimation(camera, 0, 100, true);
 

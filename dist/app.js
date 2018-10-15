@@ -143,30 +143,83 @@ var createScene = function createScene() {
     scene.beginAnimation(aniBox, 0, 100, true);
 
     /**
-     *  Animating ArcRotateCamera
-     *  Анимация перемещения орбитальной камеры
-     */
-    var animCamAlpha = new __WEBPACK_IMPORTED_MODULE_0_babylonjs__["Animation"]("animCam", "alpha", 5, __WEBPACK_IMPORTED_MODULE_0_babylonjs__["Animation"].ANIMATIONTYPE_FLOAT, __WEBPACK_IMPORTED_MODULE_0_babylonjs__["Animation"].ANIMATIONLOOPMODE_CYCLE);
+      *  Animating ArcRotateCamera
+      *  Анимация перемещения орбитальной камеры
+      */
+
+    var animCamAlpha = new __WEBPACK_IMPORTED_MODULE_0_babylonjs__["Animation"]("animCam", "alpha", 3, __WEBPACK_IMPORTED_MODULE_0_babylonjs__["Animation"].ANIMATIONTYPE_FLOAT, __WEBPACK_IMPORTED_MODULE_0_babylonjs__["Animation"].ANIMATIONLOOPMODE_CYCLE);
 
     var keysAlpha = [];
 
     keysAlpha.push({
-
         frame: 0,
-
         value: 0
-
+    });
+    keysAlpha.push({
+        frame: 10,
+        value: Math.PI / 6 // 30
+    });
+    keysAlpha.push({
+        frame: 20,
+        value: Math.PI / 2 // 90
+    });
+    keysAlpha.push({
+        frame: 30,
+        value: 2 * Math.PI / 3 // 120
+    });
+    keysAlpha.push({
+        frame: 40,
+        value: Math.PI // 180
+    });
+    keysAlpha.push({
+        frame: 50,
+        value: 5 * Math.PI / 4 // 225
+    });
+    keysAlpha.push({
+        frame: 60,
+        value: 3 * Math.PI / 2 // 270
     });
 
     keysAlpha.push({
+        frame: 70,
+        value: 11 * Math.PI / 6 // 315
+    });
 
+    keysAlpha.push({
+        frame: 80,
+        value: 2 * Math.PI // 360
+    });
+    keysAlpha.push({
+        frame: 90,
+        value: 11 * Math.PI / 5 // 360
+    });
+
+    keysAlpha.push({
         frame: 100,
-
-        value: 2 * Math.PI
-
+        value: 2 * Math.PI // 360
     });
 
     animCamAlpha.setKeys(keysAlpha);
+
+    // Creating an easing function
+
+    var easingFunction = new __WEBPACK_IMPORTED_MODULE_0_babylonjs__["BezierCurveEase"]();
+
+    // For each easing function, you can choose between EASEIN (default), EASEOUT, EASEINOUT
+
+    easingFunction.setEasingMode(__WEBPACK_IMPORTED_MODULE_0_babylonjs__["EasingFunction"].EASINGMODE_EASEINOUT);
+
+    // Adding the easing function to the animation
+
+    // animCamAlpha.setEasingFunction(easingFunction);
+
+    // animCamAlpha.QuadraticEase();
+
+
+    // Adding animation to my torus animations collection
+
+    // torus.animations.push(animationTorus);
+
 
     camera.animations.push(animCamAlpha);
 
