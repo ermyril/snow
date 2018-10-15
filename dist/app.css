@@ -36,6 +36,7 @@ canvas.black + .text-holder .snow {
 
 .snow {
   color: #fff;
+  cursor: pointer;
 }
 
 .autor {
